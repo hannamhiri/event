@@ -2024,3 +2024,38 @@ responsive
     margin-bottom: 20px;
   }
 }
+
+
+
+
+
+.event-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+.event-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.event-card .price {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.event-card .event-location {
+  font-size: 14px;
+  color: gray;
+}
+.event-card .event-date {
+  color: #ff6b6b;
+}

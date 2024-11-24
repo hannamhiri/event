@@ -1,4 +1,4 @@
-@extends('master');
+@extends('master')
 @section('content')
 
 <section class="section">
@@ -13,37 +13,43 @@
             <table class="table datatable">
               <thead>
                 <tr>
-                  <th>
-                    <b>Name</b>
-                  </th>
+                  <th>Title</th>
                   <th>Category</th>
+                  <th>Date begin</th>
+                  <th>Time</th>
                   <th>Location</th>
-                  <th data-type="date" data-format="YYYY/DD/MM">Start Date</th>
                   <th>Action</th>
                 </tr>
               </thead>
+
               <tbody>
-                <tr>
-                  <td>Unity Pugh</td>
-                  <td>9958</td>
-                  <td>Curicó</td>
-                  <td>2005/02/11</td>
-                  <td>
-                    <a href="#" title="Edit">
-                      <i class="ri-edit-2-line" style="color: orange;"></i>
-                    </a>
-                    <a href="#" title="Delete" style="margin-left: 10px;">
-                      <i class="ri-delete-bin-6-line"></i>
-                    </a>
-                    <a href="#" title="Show" style="margin-left: 10px;">
-                      <i class="ri-eye-line" style="color:rgb(72, 159, 241);"></i>
-                    </a>
-                  </td>
-                  
-                </tr>
-                
-              
-              </tbody>
+                @foreach($events as $event)
+                    <tr>
+                        <td>{{ $event->title }}</td>
+                        <td>{{ $event->category->name}}</td>
+                        <td>{{ $event->date_begin }}</td>
+                        <td>{{ $event->time }}</td>
+                        <td>{{ $event->location }}</td>
+
+                        <td>
+                            <form action="{{ route('event.destroy', $event->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn" type="submit" onclick="return confirm('voulez vous vraiment supprimer ?')">
+                                    <i class="ri-delete-bin-6-line" style="color:red;"></i>
+                                </button>
+                               
+                                <a href="{{ route('event.edit', $event) }}" class="btn">
+                                    <i class="ri-edit-2-line" style="color: orange;"></i>
+                                </a>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+            
+             
+
             </table>
             <!-- End Table with stripped rows -->
 

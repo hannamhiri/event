@@ -6,14 +6,17 @@
       <h5 class="card-title">Create Category</h5>
 
       <!-- Multi Columns Form -->
-      <form class="row g-3">
-        <div class="col-md-12">
+      <form class="row g-3" method="post" action="{{ route('category.store') }}" enctype="multipart/form-data">
+        {{ csrf_field()}}
+        <div class="col-md-6">
             <label for="inputEmail5" class="form-label">Event Category</label>
-            <input type="text" class="form-control" id="inputEmail5">
+            <input type="text" name="name" class="form-control" id="inputEmail5">
         </div>
           
-        
-        
+        <div class="col-md-6">
+          <label for="inputEmail5" class="form-label">Image</label>
+          <input class="form-control" name="image" type="file" id="formFile">
+        </div>
         
         <div class="text-center">
           <button type="submit" class="btn btncolor">Submit</button>

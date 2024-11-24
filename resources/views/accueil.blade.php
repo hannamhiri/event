@@ -1,108 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <title>Onix Digital Marketing HTML5 Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="dist/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="dist/assets/css/templatemo-onix-digital.css">
-    <link rel="stylesheet" href="dist/assets/css/animated.css">
-    <link rel="stylesheet" href="dist/assets/css/owl.css">
-<!--
-
-TemplateMo 565 Onix Digital
-
-https://templatemo.com/tm-565-onix-digital
-
---><style>
-#signInButton:hover{
-color: white !important;
-}
-#signInButton{
-color: white !important;
-}
-</style>
-  </head>
-
-<body>
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
-              <img src="assets/img/logo.PNG" style="height: 80px;">
-            </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#services">Services</a></li>
-              <li class="scroll-to-section"><a href="#about">About</a></li>
-              <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
-              
-              @if (Route::has('login'))
-                  @auth
-                      <li class="scroll-to-section"><a href="{{ url('/home') }}">Dashboard</a></li>
-                  @else
-                      <li class="scroll-to-section">
-                          <div class="main-red-button-hover">
-                              <a href="{{ route('login') }}" id="signInButton" >Sign In</a>
-                          </div>
-                      </li>
-                 
-          
-              @if (Route::has('register'))
-                  <li class="scroll-to-section">
-                      <div class="main-red-button-hover">
-                          <a href="{{ route('register') }}" id="signInButton" >Sign Up</a>
-                      </div>
-                  </li> 
-              @endif
-            @endauth
-          @endif
-          </ul>
-          
-                 
-            <a class='menu-trigger'>
-                <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
+@include('header_accueil')
   <!-- ***** Header Area End ***** -->
 
   <div class="main-banner" id="top">
@@ -210,17 +106,17 @@ color: white !important;
               <p>Get to know more about the topic in details</p>
             </div>
             <div class="item">
-              <h4>Best Content Ideas for your pages</h4>
+              <h4>Worshops</h4>
               <div class="icon"><img src="dist/assets/images/service-icon-03.png" alt=""></div>
               <p>Feel free to use this template for your business</p>
             </div>
             <div class="item">
-              <h4>Optimizing Speed for your web pages</h4>
+              <h4>Webinaires</h4>
               <div class="icon"><img src="dist/assets/images/service-icon-04.png" alt=""></div>
               <p>Get to know more about the topic in details</p>
             </div>
             <div class="item">
-              <h4>Accessibility for mobile viewing</h4>
+              <h4>Conférence</h4>
               <div class="icon"><img src="dist/assets/images/service-icon-01.png" alt=""></div>
               <p>Get to know more about the topic in details</p>
             </div>
@@ -244,6 +140,54 @@ color: white !important;
       </div>
     </div>
   </div>
+
+
+  <div class="container py-5">
+    <div class="row">
+        <!-- Première carte événement -->
+        <div class="col-md-4 mb-4">
+            <div class="event-card position-relative">
+                <img src="assets/img/machine.jpg" alt="Événement 1">
+                <div class="price">200 TND</div>
+                <div class="p-3">
+                    <h5 class="mb-2">MACHINE LEARNING SESSIONS</h5>
+                    <p class="event-location"><i class="bi bi-geo-alt"></i> Théâtre municipal de Tunis</p>
+                    <p class="event-date"><i class="bi bi-calendar"></i> 01 Octobre 2024 à 19:00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deuxième carte événement -->
+        <div class="col-md-4 mb-4">
+            <div class="event-card position-relative">
+                <img src="assets/img/java.jpg" alt="Événement 2">
+                <div class="price">20 TND</div>
+                <div class="p-3">
+                    <h5 class="mb-2">JAVA PROGRAMMING</h5>
+                    <p class="event-location"><i class="bi bi-geo-alt"></i> Théâtre municipal de Tunis</p>
+                    <p class="event-date"><i class="bi bi-calendar"></i> 12 Octobre 2024 à 21:00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troisième carte événement -->
+        <div class="col-md-4 mb-4">
+            <div class="event-card position-relative">
+                <img src="assets/img/python.jpeg" alt="Événement 3">
+                <div class="price">50 TND</div>
+                <div class="p-3">
+                    <h5 class="mb-2">PYTHON PROGRAMMING</h5>
+                    <p class="event-location"><i class="bi bi-geo-alt"></i> Pathé Mall of Sousse</p>
+                    <p class="event-date"><i class="bi bi-calendar"></i> 12 Octobre 2024 à 18:30</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
   <div id="about" class="about-us section">
     <div class="container">
@@ -317,7 +261,7 @@ color: white !important;
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-sm-12">
           <div class="owl-carousel owl-portfolio">
             <div class="item">
               <div class="thumb">
@@ -712,101 +656,6 @@ color: white !important;
     </div>
   </div>
 
-  <div class="footer-dec">
-    <img src="dist/assets/images/footer-dec.png" alt="">
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="about footer-item">
-            <div class="logo">
-              <a href="#"><img src="dist/assets/images/logo.png" alt="Onix Digital TemplateMo"></a>
-            </div>
-            <a href="#">info@company.com</a>
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="services footer-item">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#">SEO Development</a></li>
-              <li><a href="#">Business Growth</a></li>
-              <li><a href="#">Social Media Managment</a></li>
-              <li><a href="#">Website Optimization</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="community footer-item">
-            <h4>Community</h4>
-            <ul>
-              <li><a href="#">Digital Marketing</a></li>
-              <li><a href="#">Business Ideas</a></li>
-              <li><a href="#">Website Checkup</a></li>
-              <li><a href="#">Page Speed Test</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="subscribe-newsletters footer-item">
-            <h4>Subscribe Newsletters</h4>
-            <p>Get our latest news and ideas to your inbox</p>
-            <form action="#" method="get">
-              <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-              <button type="submit" id="form-submit" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
-            </form>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="copyright">
-            <p>Copyright © 2021 Onix Digital Co., Ltd. All Rights Reserved. 
-            <br>
-            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a><br>
-            Distributed by <a href="https://themewagon.com">Themewagon</a>
-          </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
+ @include('footer_accueil')
 
 
-  <!-- Scripts -->
-  <script src="dist/vendor/jquery/jquery.min.js"></script>
-  <script src="dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="dist/assets/js/owl-carousel.js"></script>
-  <script src="dist/assets/js/animation.js"></script>
-  <script src="dist/assets/js/imagesloaded.js"></script>
-  <script src="dist/assets/js/custom.js"></script>
-
-  <script>
-  // Acc
-    $(document).on("click", ".naccs .menu div", function() {
-      var numberIndex = $(this).index();
-
-      if (!$(this).is("active")) {
-          $(".naccs .menu div").removeClass("active");
-          $(".naccs ul li").removeClass("active");
-
-          $(this).addClass("active");
-          $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
-
-          var listItemHeight = $(".naccs ul")
-            .find("li:eq(" + numberIndex + ")")
-            .innerHeight();
-          $(".naccs ul").height(listItemHeight + "px");
-        }
-    });
-  </script>
-  
-</body>
-</html>

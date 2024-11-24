@@ -43,15 +43,29 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 //ces routes juste pour affichage des view 
-Route::get('/create_event', function () {
-    return view('event.create_event');
+Route::get('/show_users', function () {
+    return view('admin.users.show_users');
 });
-Route::get('/show_events', function () {
-    return view('event.show_events');
+Route::get('/show_events_for_admin', function () {
+    return view('admin.events.show_events');
 });
-Route::get('/create_category', function () {
-    return view('admin.event_category.add_category');
+Route::get('/show_registrations', function () {
+    return view('user.show_registrations');
 });
-Route::get('/show_categories', function () {
-    return view('admin.event_category.show_categories');
+Route::get('/create_user', function () {
+    return view('admin.users.create_user');
 });
+Route::get('/workshops', function () {
+    return view('event.category');
+});
+
+Route::get('/web_dev', function () {
+    return view('event.event'); 
+});
+
+
+//les vraies routes ->middleware(['auth','admin']) quand l'action est spécifique pour l'admin. pour user ->middleware('auth') pour un visiteur on ne met rien
+Route::resource('category', \App\Http\Controllers\CategoryController::class)->middleware(['auth','admin']);
+Route::resource('event', \App\Http\Controllers\EventController::class)->middleware('auth');
+Route::get('/user/events', [\App\Http\Controllers\EventController::class, 'showEventByUser'])->middleware('auth');
+
