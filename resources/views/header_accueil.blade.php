@@ -1,130 +1,89 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" dir="ltr">
 
   <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <title>EventPlanner</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="dist/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="dist/assets/css/templatemo-onix-digital.css">
-    <link rel="stylesheet" href="dist/assets/css/animated.css">
-    <link rel="stylesheet" href="dist/assets/css/owl.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>MindWell</title>
 
-  
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="dist/assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="dist/assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-   
-<!--
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="dist/assets/css/theme.css" rel="stylesheet" />
 
-TemplateMo 565 Onix Digital
-
-https://templatemo.com/tm-565-onix-digital
-
---><style>
-#signInButton:hover{
-color: white !important;
-}
-#signInButton{
-color: white !important;
-}
-a{
-  font-family: 'Poppins', sans-serif;
-}
-</style>
   </head>
 
-<body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
+  <body>
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
-              <img src="assets/img/logo.PNG" style="height: 80px;">
-            </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="/"><img src="dist/assets/img/gallery/mind.png" width="218" alt="logo" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="{{ url('/aboutus') }}">Qui nous</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="{{ url('/suggestions') }}">Services</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="{{ route('medecins')}}">Médecins</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="{{ url('/activities') }}">Activities </a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="{{ route('articles') }}">Articles</a></li>
 
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Services
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/workshops">Worshops</a></li>
-                  <li><a href="#">Page 1-2</a></li>
-                  <li><a href="#">Page 1-3</a></li>
-                </ul>
-              </li>
+              <li class="nav-item px-2"><a class="nav-link" href="{{ url('/appointements') }}">Contact</a></li>
 
-              <li class="scroll-to-section"><a href="#about">About</a></li>
-              <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
-              
-              @if (Route::has('login'))
-                  @auth
-                      <li class="scroll-to-section"><a href="{{ url('/home') }}">Dashboard</a></li>
-                  @else
-                      <li class="scroll-to-section">
-                          <div class="main-red-button-hover">
-                              <a href="{{ route('login') }}" id="signInButton" >Sign In</a>
-                          </div>
-                      </li>
-                 
-          
-              @if (Route::has('register'))
-                  <li class="scroll-to-section">
-                      <div class="main-red-button-hover">
-                          <a href="{{ route('register') }}" id="signInButton" >Sign Up</a>
-                      </div>
-                  </li> 
-              @endif
-            @endauth
-          @endif
-          </ul>
+            </ul>
+
+            @if (Auth::check() && Auth::user()->usertype === "admin")
+            <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="{{ route('dashboard') }}">Dashboard</a>
+        @endif
+        
+        @if (Auth::check() && Auth::user()->usertype !== "admin")
+            <!-- User is logged in but not admin -->
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4">
+                    Logout
+                </button>
+            </form>
+        @endif
+        
+        @if (!Auth::check())
+            <!-- If user is not logged in -->
+            <div class="main-red-button-hover">
+                <a href="{{ route('login') }}" class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4">Sign In</a>
+            </div>
+        
+            @if (Route::has('register'))
+                <div class="main-red-button-hover">
+                    <a href="{{ route('register') }}" class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4">Sign Up</a>
+                </div>
+            @endif
+        @endif
+        
+        
             
-            <a class='menu-trigger'>
-                <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
+
+          </div>
         </div>
-      </div>
-    </div>
-  </header>
+      </nav>

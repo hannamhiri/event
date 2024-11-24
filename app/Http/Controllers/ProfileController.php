@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
@@ -33,6 +34,8 @@ class ProfileController extends Controller
         }
 
         $request->user()->save();
+        $user=$request->user();
+        \Mail::raw('You have successfully update your Profil !', function ($message) use ($user) { $message->to($user->email) ->subject('Success Login'); });
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
